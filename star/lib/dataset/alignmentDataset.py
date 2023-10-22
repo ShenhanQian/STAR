@@ -17,8 +17,8 @@ from torch.utils.data import Dataset
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 sys.path.append("./")
-from lib.dataset.augmentation import Augmentation
-from lib.dataset.encoder import get_encoder
+from ...lib.dataset.augmentation import Augmentation
+from ...lib.dataset.encoder import get_encoder
 
 
 class AlignmentDataset(Dataset):

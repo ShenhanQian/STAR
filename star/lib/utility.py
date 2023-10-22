@@ -12,13 +12,13 @@ import torch.optim.lr_scheduler as lr_scheduler
 import torch.nn.functional as F
 
 # private package
-from conf import *
-from lib.dataset import AlignmentDataset
-from lib.backbone import StackedHGNetV1
-from lib.loss import *
-from lib.metric import NME, FR_AUC
-from lib.utils import convert_secs2time
-from lib.utils import AverageMeter
+from ..conf import *
+from ..lib.dataset import AlignmentDataset
+from ..lib.backbone import StackedHGNetV1
+from ..lib.loss import *
+from ..lib.metric import NME, FR_AUC
+from ..lib.utils import convert_secs2time
+from ..lib.utils import AverageMeter
 
 
 def get_config(args):

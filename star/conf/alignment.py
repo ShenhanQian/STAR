@@ -9,11 +9,12 @@ class Alignment(Base):
 
     def __init__(self, args):
         super(Alignment, self).__init__('alignment')
-        self.ckpt_dir = '/apdcephfs_cq3/share_1134483/charlinzhou/ckpts/STAR/'
+        self.ckpt_dir = './tmp/apdcephfs_cq3/share_1134483/charlinzhou/ckpts/STAR/'
         self.net = "stackedHGnet_v1"
         self.nstack = 4
         self.loader_type = "alignment"
-        self.data_definition = "WFLW"  # COFW, 300W, WFLW
+        # self.data_definition = "WFLW"  # COFW, 300W, WFLW
+        self.data_definition = "300W"  # COFW, 300W, WFLW
         self.test_file = "test.tsv"
 
         # image

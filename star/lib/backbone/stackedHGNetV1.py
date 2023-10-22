@@ -5,7 +5,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 from .core.coord_conv import CoordConvTh
-from lib.dataset import get_decoder
+from ...lib.dataset import get_decoder
 
 
 

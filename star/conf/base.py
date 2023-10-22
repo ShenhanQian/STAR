@@ -2,7 +2,9 @@ import uuid
 import logging
 import os.path as osp
 from argparse import Namespace
-from tensorboardX import SummaryWriter
+# from tensorboardX import SummaryWriter
+from torch.utils.tensorboard import SummaryWriter
+
 
 
 class Base:
@@ -68,7 +70,7 @@ class Base:
         self.logger = None
 
     def init_instance(self):
-        self.writer = SummaryWriter(logdir=self.log_dir, comment=self.type)
+        self.writer = SummaryWriter(log_dir=self.log_dir, comment=self.type)
         log_formatter = logging.Formatter("%(asctime)s %(levelname)-8s: %(message)s")
         root_logger = logging.getLogger()
         file_handler = logging.FileHandler(osp.join(self.log_dir, "log.txt"))
