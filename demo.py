@@ -12,6 +12,7 @@ from matplotlib import pyplot as plt
 import torch
 # private package
 from star.lib import utility
+from star.asset import predictor_path, model_path
 
 
 class GetCropMatrix():
@@ -246,18 +247,12 @@ if __name__ == '__main__':
     ROOT_DIR = Path(__file__).parent / 'star'
 
     # face detector
-    # could be downloaded in this repo: https://github.com/italojs/facial-landmarks-recognition/tree/master
-    # predictor_path = '/path/to/shape_predictor_68_face_landmarks.dat'
-    predictor_path = str(ROOT_DIR / 'asset/shape_predictor_68_face_landmarks.dat')
     detector = dlib.get_frontal_face_detector()
     sp = dlib.shape_predictor(predictor_path)
 
     # facial landmark detector
     args = argparse.Namespace()
     args.config_name = 'alignment'
-    # could be downloaded here: https://drive.google.com/file/d/1aOx0wYEZUfBndYy_8IYszLPG_D2fhxrT/view
-    # model_path = '/path/to/WFLW_STARLoss_NME_4_02_FR_2_32_AUC_0_605.pkl'
-    model_path = str(ROOT_DIR / 'asset/300W_STARLoss_NME_2_87.pkl')
     device_ids = '0'
     device_ids = list(map(int, device_ids.split(",")))
     alignment = Alignment(args, model_path, dl_framework="pytorch", device_ids=device_ids)
